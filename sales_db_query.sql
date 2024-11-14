@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS sales (
     timestamp TEXT
 )
 
+SELECT * from sales LIMIT 20;

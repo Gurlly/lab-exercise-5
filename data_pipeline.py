@@ -48,16 +48,16 @@ df = df[df['quantity'] >= 0]
 df = df[df['price'] >= 0]
 
 # Preview standardized data
-print(df.head())
+# print(df.head())
 
 # Save standardized data
-df.to_csv('./cleaned_transactions.csv', index=False)
+# df.to_csv('./cleaned_transactions.csv', index=False)
 
 # ----------------------------------------------DATABASE-------------------------------------------------------------------
 
 # Connect to SQLite database
-#conn = sqlite3.connect('shopease_sales.db')
-#cursor = conn.cursor()
-#
-## Insert standardized table in the sales table
-#df.to_sql('sales', conn, if_exists='replace', index=False)  
+conn = sqlite3.connect('shopease_sales.db')
+cursor = conn.cursor()
+
+# Insert standardized table in the sales table
+df.to_sql('sales', conn, if_exists='replace', index=False)  
